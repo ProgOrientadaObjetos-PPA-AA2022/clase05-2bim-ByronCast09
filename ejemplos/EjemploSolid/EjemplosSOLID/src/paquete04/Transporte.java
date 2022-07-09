@@ -17,4 +17,5 @@ public abstract class Transporte {
     public double obtenerTarifa(){
         return tarifa;
     }
+    
 }
