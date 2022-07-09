@@ -42,12 +42,10 @@ public class TiposTransporte {
     public String toString() {
         String cadenafinal = String.format("Reporte");
         for (Transporte e : obtenerTransportes()) {
-            cadenafinal = String.format("Transporte Bus: %.2f\n"
-                    +"Transporte Maritimo: %.2f\n"
-                    +"Transporte Bus: %.2f\n",cadenafinal, e.obtenerTarifa(),
-                    e.obtenerTarifa(),e.obtenerTarifa());
+            cadenafinal = String.format("%s%s\n"
+                    ,cadenafinal, e);
         }
-        cadenafinal = String.format("%sPromedio de edades: %.2f\n",cadenafinal,
+        cadenafinal = String.format("%sPromedio de tarifas: %.2f\n",cadenafinal,
                 promedioTarifas);
         return cadenafinal;
     }

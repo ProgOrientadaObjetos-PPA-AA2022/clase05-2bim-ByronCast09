@@ -20,43 +20,72 @@ public class Principal2 {
         // Reporte
         // Transporte Bus: $1.00
         // Transporte Maritimo: $1000.1
-        // Trasnporte Bus : $3.22
+        // Transporte Bus : $3.22
         //Promedio de Tarijas
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese cuantos numeros desea en trasnporte: ");
-        int num = sc.nextInt();
-        int opc = 1;
+        
+        ArrayList<Transporte> lista1 = new ArrayList<>();
+
+        int r;
         do {
-            switch (opc) {
-            case 1:
-                TransporteBus bus = new TransporteBus();
-                bus.establecerCooperativaBus("24 Mayo");
-                bus.establecerTarifa();
+            System.out.println("Ingrese cuantos numeros desea en trasnporte: ");
+            int num = sc.nextInt();
+            for (int i = 0; i < num; i++) {
+                int programa;
+                System.out.println("Seleciona una de las opciones\n");
+                int opc;
+                System.out.println("1) Bus\n"
+                        + "2) Taxi\n"
+                        + "3) Aereo\n"
+                        + "4) Maritimo\n");
+                opc = sc.nextInt();
+                switch (opc) {
+                    case 1:
+                        TransporteBus bus = new TransporteBus();
+                        bus.establecerCooperativaBus("24 Mayo");
+                        bus.establecerTarifa();
 
-                TransporteTaxi taxi = new TransporteTaxi();
-                taxi.establecerCooperativaTaxi("Yahuarcuna");
-                taxi.establecerTarifa();
+                        lista1.add(bus);
 
-                TransporteAereo aereo = new TransporteAereo();
-                aereo.establecerCooperativaAereo("AereLine");
-                aereo.establecerTarifa();
+                        break;
+                    case 2:
+                        TransporteTaxi taxi = new TransporteTaxi();
+                        taxi.establecerCooperativaTaxi("Yahuarcuna");
+                        taxi.establecerTarifa();
 
-                ArrayList<Transporte> lista = new ArrayList<>();
-                lista.add(bus);
-                lista.add(taxi);
-                lista.add(aereo);
+                        lista1.add(taxi);
 
-                TiposTransporte tipos = new TiposTransporte();
-                tipos.establecerTransportes(lista);
-                tipos.establecerPromedioTarifas();
-                
-                System.out.printf("Promedio de Tarifas: %.2f\n", 
-                tipos.obtenerPromedioTarifas());
-            case 2:
-                
-        }
-        } while (true);
-        
-        
+                        
+                        break;
+                    case 3:
+                        TransporteAereo aereo = new TransporteAereo();
+                        aereo.establecerCooperativaAereo("AereoLine");
+                        aereo.establecerTarifa();
+
+                        lista1.add(aereo);
+
+                        break;
+                    case 4:
+                        TransporteMaritimo marit = new TransporteMaritimo();
+                        marit.establecerCooperativaMaritimo("AereLine");
+                        marit.establecerTarifa();
+
+                        lista1.add(marit);
+
+                        break;
+                }
+
+            }
+            System.out.println("Si desea reiniciar el programa pulse 5, en caso"
+                    + " contrario pulso 6");
+            r = sc.nextInt();
+
+        } while (r == 5);
+        TiposTransporte tipos = new TiposTransporte();
+        tipos.establecerTransportes(lista1);
+        tipos.establecerPromedioTarifas();
+        System.out.print(tipos);
+        System.out.println("¡Gracias por usar el Programa!");
+
     }
 }

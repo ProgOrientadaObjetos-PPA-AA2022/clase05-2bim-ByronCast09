@@ -26,4 +26,9 @@ public class TransporteAereo extends Transporte {
         return cooperativaAereo;
     }
 
+    @Override
+    public String toString() {
+        String cadena = String.format("Trasnporte Aereo: %.2f", tarifa);
+        return cadena;
+    }
 }

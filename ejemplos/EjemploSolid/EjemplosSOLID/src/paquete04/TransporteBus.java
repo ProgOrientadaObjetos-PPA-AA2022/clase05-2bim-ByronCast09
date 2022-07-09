@@ -19,11 +19,20 @@ public class TransporteBus extends Transporte {
 
     @Override
     public void establecerTarifa() {
-        tarifa = 2.00 + 0.20;
+        tarifa = 0.90 + 0.10;
     }
 
     public String obtenerCooperativaBus() {
         return cooperativaBus;
     }
 
+    @Override
+    public String toString(){
+        String cadena = String.format("\nTrasnporte Bus: %.2f",tarifa);
+        return cadena;
+    }
 }
+
+    
+    
+
