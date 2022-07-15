@@ -7,14 +7,16 @@ package paquete10;
 
 import java.io.Serializable;
 
-
-public class APINetflix implements APIMovie,Serializable{
-    
+/**
+ *
+ * @author USUARIO 2020
+ */
+public class APIDirectvGo implements APIMovie, Serializable {
     private String apiKey;
     
     @Override
     public void establecerApiKey(String ak){
-        apiKey = String.format("%s%s", ak, "123123");
+        apiKey = String.format("%s%s", ak, "909090");
     }
     
     @Override
@@ -23,6 +25,6 @@ public class APINetflix implements APIMovie,Serializable{
     }
     @Override
     public String toString() {
-        return "Netflix";
+        return "DirectvGo";
     }
 }

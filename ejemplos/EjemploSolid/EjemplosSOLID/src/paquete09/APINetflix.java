@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package paquete09;
-
+import java.io.Serializable;
 /**
  *
  * @author reroes
@@ -20,5 +20,8 @@ public class APINetflix {
     public String obtenerApiKey(){
         return apiKey;
     }
-    
+    @Override
+    public String toString() {
+        return "Netflix";
+    }
 }
